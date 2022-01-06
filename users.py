@@ -15,6 +15,7 @@ class User(NamedTuple):
 
 
 def add_user(user_id: int, name: str, last_name: str, phone_number: str, photo: str) -> None:
+    """Adds a new user to the database"""
     cursor = db.get_cursor()
     cursor.execute("INSERT INTO user (id, name, last_name, phone_number, photo) "
                    f"VALUES (?, ?, ?, ?, ?)", (user_id, name, last_name, phone_number, photo))
